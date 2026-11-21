@@ -183,4 +183,8 @@ test('Host service constructs, reads, and disposes the monthly reader', () => {
   assert.match(source, /createQuotaReader\(\{\s*credentials:\s*ctx\.credentials,\s*monthlyReader:\s*this\.monthlyReader\s*\}\)/)
   assert.match(source, /this\.reader\.read\(request\?\.force\s*===\s*true,\s*signal,\s*request\?\.monthly\s*===\s*true\)/)
   assert.match(source, /this\.monthlyReader\.dispose\(\)/)
+  assert.doesNotMatch(source, /import\s*(?:\{[^}]*\}|\w+)\s*from\s*['"]@deepseek-ai\/dsh-typert-protocol['"]/)
+  assert.match(source, /this\.typertRemote\s*=\s*Object\.freeze\(\{\s*service:\s*this,\s*serviceKey:\s*this\.name,\s*namespace:\s*this\.name\s*\}\)/)
+  assert.match(source, /'@deepseek-ai\/dsh-typert-protocol\/remote-methods'/)
+  assert.match(source, /ctx\.provide\('kimiQuota', this\)/)
 })
