@@ -40,7 +40,15 @@
     "test": "node --test",
     "check": "node --check index.js && node --check quota.js && node --check fetcher.js && node --check monthly-page.js && node --check browser-monthly.js && node --check remote-contract.cjs && node --check client-main.cjs && node --check build.mjs && node --check client.js"
   },
-  "dependencies": {
+  "peerDependencies": {
+    "@deepseek-ai/dsh-typert-protocol": "0.2.2-rc.5"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-typert-protocol": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
     "@deepseek-ai/dsh-typert-protocol": "0.2.2-rc.5"
   },
   "dsh": {
