@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Kimi membership quota",
+    "description": "Shows 5-hour, weekly, and monthly used membership quota beside the existing composer status items; plans without a limit show No limit. The 5-hour and weekly values keep the original KIMI_API_KEY API channel and 60-second refresh cycle. Monthly API data always takes priority and needs no browser login. Only when the API omits monthly usage does the browser supplement run in a plugin-created background tab, requiring your selected Chrome and a running local web-access Proxy: the first monthly login click opens the Kimi subscription page; if login is required, log in manually in Chrome and click again. The plugin never opens a browser at startup. After a successful monthly browser read, it reads every 10 minutes, and clicking forces a retry. It operates only its own tab, closes it on success, and cleans it up when disabled or unloaded. No cookies, page tokens, or full page text are saved, and account credentials are never entered automatically. Browser automation may trigger detection and account risk; actions occur only on your click or the approved 10-minute schedule. Disabling removes only this status item and stops automatic reads without deleting model settings or credentials."
+  }
+}

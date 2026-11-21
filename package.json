@@ -1,0 +1,60 @@
+{
+  "name": "@bwtymdb/kimi-quota-status",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Show used Kimi membership quota beside the existing composer status entries.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "dsh": ">=0.2.2-rc.5 <0.3.0-0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bwtymdb/kimi-quota-status.git"
+  },
+  "homepage": "https://github.com/bwtymdb/kimi-quota-status#readme",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "quota.js",
+    "fetcher.js",
+    "monthly-page.js",
+    "browser-monthly.js",
+    "remote-contract.cjs",
+    "client-main.cjs",
+    "build.mjs",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test",
+    "check": "node --check index.js && node --check quota.js && node --check fetcher.js && node --check monthly-page.js && node --check browser-monthly.js && node --check remote-contract.cjs && node --check client-main.cjs && node --check build.mjs && node --check client.js"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-typert-protocol": "0.2.2-rc.5"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-api-remotes",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}
